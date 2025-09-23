@@ -12,7 +12,7 @@ import { Input } from '@/components/ui/input';
 type FormData = z.infer<typeof formSchema>;
 
 const Register = () => {
-  // This line connects your form to the Zod rulebook
+  // This line connects your form to the Zod 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -27,7 +27,7 @@ const Register = () => {
   // This function only runs if all Zod rules pass
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
  async function onSubmit(values : any) {
-    console.log("Form is valid! Sending data to the server:", values);
+    // console.log("Form is valid! Sending data to the server:", values);
    try {
      const response = await registerUser(values);
      console.log("Register successfully",response);
