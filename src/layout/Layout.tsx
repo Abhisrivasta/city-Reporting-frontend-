@@ -11,7 +11,9 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
+      <footer className='fixed inset-x-0 bottom-0'>
       <Footer/>
+      </footer>
     </>
   )
 }
