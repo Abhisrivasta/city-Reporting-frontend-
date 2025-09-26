@@ -36,3 +36,8 @@ export const formSchema = z.object({
 }).refine((data)=> data.password === data.confirmPassword,{
     message:"Password and confirm password do not matches",
 })
+
+export const loginSchema = z.object({
+  email:z.email({message:"Invalid email address"}),
+  password : passwordSchema
+})

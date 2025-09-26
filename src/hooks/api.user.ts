@@ -14,3 +14,15 @@ export const registerUser = async(formData : {
         console.error(error);
     }
 }
+
+export const loginUser = async(formData:{
+    email:string;
+    password:string;
+}) => {
+    try {
+        const response = apiClient.post("/users/register",formData);
+        return (await response).data;
+    } catch (error) {
+        console.log(error)
+    }
+}

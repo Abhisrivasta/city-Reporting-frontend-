@@ -29,13 +29,14 @@ const Logo = () => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="relative">
-        <MapPin className="h-8 w-8 text-primary" />
+        <MapPin className="h-8 w-8  text-blue-500" />
         <Sparkles className="h-3 w-3 text-accent-500 absolute -top-1 -right-1 animate-pulse" />
       </div>
       <div>
-        <span className="text-xl font-semibold bg-gradient-to-r from-primary to-accent-500 bg-clip-text text-transparent">
+       <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-accent-500 bg-clip-text text-transparent">
           CityReport
         </span>
+
         <div className="text-xs text-muted-foreground">
           Smart City Solutions
         </div>

@@ -1,20 +1,20 @@
-import {Sun,Moon} from "lucide-react"
-import { useTheme } from "./ThemeProvider"
-import { Button } from "./ui/button"
-const Themetoggle = () => {
-  const { theme, setTheme } = useTheme()
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
+import { Button } from "./ui/button";
+import { forwardRef } from "react";
+
+const Themetoggle = forwardRef<HTMLButtonElement>((props, ref) => {
+  const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    if(theme === "light") setTheme("dark")
-        else setTheme("light")
-  }
-  return (
-    <div>
-        <Button variant="ghost" onClick={toggleTheme}>
-            {theme === "dark" ? <Sun/> : <Moon/>}
-        </Button>
-    </div>
-  )
-}
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
-export default Themetoggle
+  return (
+    <Button ref={ref} variant="ghost" onClick={toggleTheme} {...props}>
+      {theme === "dark" ? <Sun /> : <Moon />}
+    </Button>
+  );
+});
+
+export default Themetoggle;
